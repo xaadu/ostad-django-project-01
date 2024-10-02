@@ -8,7 +8,8 @@ urlpatterns = [
     path('otp-verify/', views.otp_verify_view, name='otp_verify'),
     path('home/', views.home_view, name='home'),
     path('logout/', views.logout_view, name='logout'),  # Added logout URL
-    path('profile-update/', views.profile_update_view, name='profile_update'),  # Added profile update URL
+    path('profile-update/', views.profile_update_view, name='profile_update'),
+    path('register/', views.register_view, name='register'),  # Registration URL  # Added profile update URL
 
 # Password Reset URLs
     path('password-reset/',

@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
 </head>
 <body>
     <h2>Login</h2>
@@ -22,5 +23,6 @@
         <button type="submit">Login</button>
     </form>
     <p><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
+    <p><a href="{% url 'register' %}">Don't have an account? Register here.</a></p>
 </body>
 </html>
