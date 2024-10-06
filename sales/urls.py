@@ -18,7 +18,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("users/", include("users.urls")),
-]
+from django.shortcuts import render
+from django.conf import settings
+from django.conf.urls.static import static
+
+
+def index(request):
+    return render(request, "index.html")
+
+
+urlpatterns = (
+    [
+        path("admin/", admin.site.urls),
+        path("", index),
+        path("users/", include("users.urls")),
+    ]
+    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)
